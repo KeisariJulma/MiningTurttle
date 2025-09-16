@@ -1,4 +1,4 @@
-local url = "https://raw.githubusercontent.com/KeisariJulma/Turtle/master/mining/strip.lua"
+local url = "https://github.com/KeisariJulma/MiningTurttle"
 local response = http.get(url)
 
 if response then
