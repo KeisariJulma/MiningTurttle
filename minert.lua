@@ -1,15 +1,13 @@
 local slot = {
     fuel = 1,
     torch = 2,
-    fill = 3
 }
+
 local placeTorch = true
 
-function Main()
-    turtle.select(slot.fuel)
-    turtle.refuel(1) -- make sure turtle has fuel
-    Forward(5)
-end
+-- Refuel first
+turtle.select(slot.fuel)
+turtle.refuel(1)
 
 function Torch()
     if placeTorch then
@@ -19,15 +17,22 @@ function Torch()
 end
 
 function Forward(length)
-    print("Forward")
     for i = 1, length do
         Torch()
-        turtle.select(slot.fuel) -- make sure fuel slot is selected
+        turtle.select(slot.fuel) -- keep fuel selected to move
         while not turtle.forward() do
-            turtle.dig()
-            sleep(0.5)
+            if turtle.detect() then
+                turtle.dig()
+            else
+                print("Cannot move forward!")
+                sleep(1)
+            end
         end
     end
+end
+
+function Main()
+    Forward(5)
 end
 
 Main()
