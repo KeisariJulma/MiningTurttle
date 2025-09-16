@@ -11,13 +11,20 @@ local plaseTorch = true
 
 
 function Main()
-    torch()
+    Torch()
+    Forward(5)
     
 end
 
-function torch()
+function Torch()
     if plaseTorch then 
         turtle.select(slot.torch)
         turtle.place()
+    end
+end
+
+function Forward(length)
+    for i=1, length, 1 do 
+        turtle.forward()
     end
 end
