@@ -1,4 +1,4 @@
-print("Hello")
+print("Hegsdfgsllo")
 
 
 local slot = {
@@ -13,18 +13,23 @@ local plaseTorch = true
 function Main()
     Torch()
     Forward(5)
-    
+
 end
 
 function Torch()
-    if plaseTorch then 
+    if plaseTorch then
         turtle.select(slot.torch)
         turtle.place()
     end
 end
 
 function Forward(length)
-    for i=1, length, 1 do 
+    print("Forward")
+    for i=1, length, 1 do
         turtle.forward()
     end
 end
+
+
+
+Main()
