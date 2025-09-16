@@ -11,9 +11,7 @@ local plaseTorch = true
 
 
 function Main()
-    Torch()
     Forward(5)
-
 end
 
 function Torch()
